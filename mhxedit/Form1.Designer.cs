@@ -61,8 +61,9 @@
             this.buttonSetAllMax = new System.Windows.Forms.Button();
             this.buttonSetSelMax = new System.Windows.Forms.Button();
             this.tabPage2Fill = new System.Windows.Forms.TabPage();
+            this.checkBoxFillSkipDummy = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxFillIncrement = new System.Windows.Forms.CheckBox();
             this.numItemAmount = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.numLoopCount = new System.Windows.Forms.NumericUpDown();
@@ -399,8 +400,9 @@
             // 
             // tabPage2Fill
             // 
+            this.tabPage2Fill.Controls.Add(this.checkBoxFillSkipDummy);
             this.tabPage2Fill.Controls.Add(this.button1);
-            this.tabPage2Fill.Controls.Add(this.checkBox1);
+            this.tabPage2Fill.Controls.Add(this.checkBoxFillIncrement);
             this.tabPage2Fill.Controls.Add(this.numItemAmount);
             this.tabPage2Fill.Controls.Add(this.label10);
             this.tabPage2Fill.Controls.Add(this.numLoopCount);
@@ -416,6 +418,18 @@
             this.tabPage2Fill.Text = "Fill";
             this.tabPage2Fill.UseVisualStyleBackColor = true;
             // 
+            // checkBoxFillSkipDummy
+            // 
+            this.checkBoxFillSkipDummy.AutoSize = true;
+            this.checkBoxFillSkipDummy.Checked = true;
+            this.checkBoxFillSkipDummy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFillSkipDummy.Location = new System.Drawing.Point(24, 85);
+            this.checkBoxFillSkipDummy.Name = "checkBoxFillSkipDummy";
+            this.checkBoxFillSkipDummy.Size = new System.Drawing.Size(83, 17);
+            this.checkBoxFillSkipDummy.TabIndex = 9;
+            this.checkBoxFillSkipDummy.Text = "Skip dummy";
+            this.checkBoxFillSkipDummy.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(116, 118);
@@ -426,17 +440,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // checkBoxFillIncrement
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(116, 85);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Increment";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxFillIncrement.AutoSize = true;
+            this.checkBoxFillIncrement.Checked = true;
+            this.checkBoxFillIncrement.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFillIncrement.Location = new System.Drawing.Point(116, 85);
+            this.checkBoxFillIncrement.Name = "checkBoxFillIncrement";
+            this.checkBoxFillIncrement.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxFillIncrement.TabIndex = 7;
+            this.checkBoxFillIncrement.Text = "Increment";
+            this.checkBoxFillIncrement.UseVisualStyleBackColor = true;
             // 
             // numItemAmount
             // 
@@ -665,10 +679,11 @@
         private System.Windows.Forms.NumericUpDown numStartID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxFillIncrement;
         private System.Windows.Forms.NumericUpDown numItemAmount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBoxFillSkipDummy;
     }
 }
 
