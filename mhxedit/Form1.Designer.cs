@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,10 +75,23 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numEquipLevel = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxEquipID = new System.Windows.Forms.ComboBox();
+            this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
+            this.monHunEquipDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monHunItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monHunEquipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -89,7 +105,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLoopCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStartID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numEquipLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iDAvailableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -103,7 +124,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(663, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem2
             // 
@@ -139,7 +159,6 @@
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
-            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -166,7 +185,6 @@
             // 
             this.openFileDialog1.FileName = "system";
             this.openFileDialog1.Filter = "MHX Save File|system";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // tabControl1
             // 
@@ -175,6 +193,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -575,6 +594,117 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.numEquipLevel);
+            this.tabPage3.Controls.Add(this.comboBoxEquipID);
+            this.tabPage3.Controls.Add(this.comboBoxEquipType);
+            this.tabPage3.Controls.Add(this.monHunEquipDataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(631, 404);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Equipment Box";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(353, 80);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Level";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(353, 54);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(18, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "ID";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(353, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Type";
+            // 
+            // numEquipLevel
+            // 
+            this.numEquipLevel.Location = new System.Drawing.Point(402, 78);
+            this.numEquipLevel.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numEquipLevel.Name = "numEquipLevel";
+            this.numEquipLevel.Size = new System.Drawing.Size(120, 20);
+            this.numEquipLevel.TabIndex = 3;
+            this.numEquipLevel.ValueChanged += new System.EventHandler(this.numEquipLevel_ValueChanged);
+            // 
+            // comboBoxEquipID
+            // 
+            this.comboBoxEquipID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEquipID.FormattingEnabled = true;
+            this.comboBoxEquipID.Location = new System.Drawing.Point(402, 51);
+            this.comboBoxEquipID.Name = "comboBoxEquipID";
+            this.comboBoxEquipID.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEquipID.TabIndex = 2;
+            this.comboBoxEquipID.SelectedIndexChanged += new System.EventHandler(this.comboBoxEquipID_SelectedIndexChanged);
+            // 
+            // comboBoxEquipType
+            // 
+            this.comboBoxEquipType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEquipType.FormattingEnabled = true;
+            this.comboBoxEquipType.Location = new System.Drawing.Point(402, 24);
+            this.comboBoxEquipType.Name = "comboBoxEquipType";
+            this.comboBoxEquipType.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEquipType.TabIndex = 1;
+            this.comboBoxEquipType.SelectedIndexChanged += new System.EventHandler(this.comboBoxEquipType_SelectedIndexChanged);
+            // 
+            // monHunEquipDataGridView
+            // 
+            this.monHunEquipDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.monHunEquipDataGridView.AutoGenerateColumns = false;
+            this.monHunEquipDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.monHunEquipDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.typeDataGridViewTextBoxColumn,
+            this.iDDataGridViewTextBoxColumn1,
+            this.levelDataGridViewTextBoxColumn});
+            this.monHunEquipDataGridView.DataSource = this.monHunEquipBindingSource;
+            this.monHunEquipDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.monHunEquipDataGridView.Name = "monHunEquipDataGridView";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monHunEquipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.monHunEquipDataGridView.RowHeadersWidth = 65;
+            this.monHunEquipDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.monHunEquipDataGridView.Size = new System.Drawing.Size(326, 392);
+            this.monHunEquipDataGridView.TabIndex = 0;
+            this.monHunEquipDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.monHunEquipDataGridView_DataBindingComplete);
+            this.monHunEquipDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.monHunEquipDataGridView_RowEnter);
+            // 
+            // iDAvailableBindingSource
+            // 
+            this.iDAvailableBindingSource.DataMember = "IDAvailable";
+            this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -601,6 +731,35 @@
             // 
             this.monHunItemBindingSource.DataSource = typeof(mhxedit.MonHunItem);
             // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // levelDataGridViewTextBoxColumn
+            // 
+            this.levelDataGridViewTextBoxColumn.DataPropertyName = "Level";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.NullValue = null;
+            this.levelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.levelDataGridViewTextBoxColumn.HeaderText = "Level";
+            this.levelDataGridViewTextBoxColumn.Name = "levelDataGridViewTextBoxColumn";
+            this.levelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.levelDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // monHunEquipBindingSource
+            // 
+            this.monHunEquipBindingSource.DataSource = typeof(mhxedit.MonHunEquip);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +767,7 @@
             this.ClientSize = new System.Drawing.Size(663, 472);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "mhxedit";
@@ -629,7 +789,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLoopCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStartID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numEquipLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iDAvailableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,6 +850,19 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBoxFillSkipDummy;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView monHunEquipDataGridView;
+        private System.Windows.Forms.BindingSource monHunEquipBindingSource;
+        private System.Windows.Forms.BindingSource iDAvailableBindingSource;
+        private System.Windows.Forms.NumericUpDown numEquipLevel;
+        private System.Windows.Forms.ComboBox comboBoxEquipID;
+        private System.Windows.Forms.ComboBox comboBoxEquipType;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
     }
 }
 
