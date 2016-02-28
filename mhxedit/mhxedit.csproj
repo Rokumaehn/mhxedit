@@ -63,6 +63,7 @@
     <Compile Include="MonHunEquip.cs" />
     <Compile Include="MonHunItem.cs" />
     <Compile Include="MonHunSave.cs" />
+    <Compile Include="MonHunTalisman.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">

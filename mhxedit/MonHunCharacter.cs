@@ -108,7 +108,8 @@ namespace mhxedit
             reader.BaseStream.Seek(0x4667, SeekOrigin.Begin);
             for (int i = 0; i < 1400; i++)
             {
-                equipBox[i] = new MonHunEquip(reader.ReadBytes(36));
+                //equipBox[i] = new MonHunEquip(reader.ReadBytes(36));
+                equipBox[i] = MonHunEquip.Create(reader.ReadBytes(36));
             }
         }
     }

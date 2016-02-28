@@ -218,6 +218,34 @@ namespace mhxedit
                 comboBoxEquipID.DataSource = obj.IDAvailable;
                 comboBoxEquipID.SelectedItem = obj.ID;
 
+                numEquipLevel.Value = obj.Level;
+
+                if(_selEquip is MonHunTalisman)
+                {
+                    MonHunTalisman tal = _selEquip as MonHunTalisman;
+
+                    comboBoxSkillFirst.DataSource = MonHunTalisman.dictSkills.Values.ToArray();
+                    if (tal.SkillFirstKnown()) comboBoxSkillFirst.SelectedItem = tal.SkillFirst;
+                    else comboBoxSkillFirst.Text = tal.SkillFirst;
+
+                    comboBoxSkillSecond.BindingContext = new BindingContext();
+                    comboBoxSkillSecond.DataSource = MonHunTalisman.dictSkills.Values.ToArray();
+                    if (tal.SkillSecondKnown()) comboBoxSkillSecond.SelectedItem = tal.SkillSecond;
+                    else comboBoxSkillSecond.Text = tal.SkillSecond;
+
+                    textBoxSkillFirstValue.Text = tal.SkillFirstValue.ToString();
+                    textBoxSkillSecondValue.Text = tal.SkillSecondValue.ToString();
+                }
+                else
+                {
+                    comboBoxSkillFirst.SelectedItem = null;
+                    comboBoxSkillFirst.DataSource = null;
+                    comboBoxSkillSecond.SelectedItem = null;
+                    comboBoxSkillSecond.DataSource = null;
+                    textBoxSkillFirstValue.Text = string.Empty;
+                    textBoxSkillSecondValue.Text = string.Empty;
+                }
+
                 _equipSelectionUpdating = false;
             }
         }
@@ -262,7 +290,63 @@ namespace mhxedit
             }
         }
 
-        
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.HeaderCell.Value = row.Index.ToString("D4");
+            }
+        }
+
+        private void comboBoxSkillFirst_TextUpdate(object sender, EventArgs e)
+        {
+            if(_equipSelectionUpdating) return;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                var obj = _selEquip as MonHunTalisman;
+
+                obj.SkillFirst = comboBoxSkillFirst.Text;
+
+                monHunEquipDataGridView.InvalidateRow(monHunEquipDataGridView.CurrentRow.Index);
+            }
+        }
+
+        private void comboBoxSkillSecond_TextChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                var obj = _selEquip as MonHunTalisman;
+
+                obj.SkillSecond = comboBoxSkillSecond.Text;
+
+                monHunEquipDataGridView.InvalidateRow(monHunEquipDataGridView.CurrentRow.Index);
+            }
+        }
+
+        private void textBoxSkillFirstValue_TextChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                var obj = _selEquip as MonHunTalisman;
+                obj.SkillFirstValue = textBoxSkillFirstValue.Text;
+            }
+        }
+
+        private void textBoxSkillSecondValue_TextChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                var obj = _selEquip as MonHunTalisman;
+                obj.SkillSecondValue = textBoxSkillSecondValue.Text;
+            }
+        }
     }
 
 

@@ -76,6 +76,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBoxSkillSecond = new System.Windows.Forms.ComboBox();
+            this.comboBoxSkillFirst = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,6 +86,9 @@
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.monHunEquipDataGridView = new System.Windows.Forms.DataGridView();
             this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxSkillFirstValue = new System.Windows.Forms.TextBox();
+            this.textBoxSkillSecondValue = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -590,12 +595,19 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 65;
             this.dataGridView1.Size = new System.Drawing.Size(363, 392);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.textBoxSkillSecondValue);
+            this.tabPage3.Controls.Add(this.textBoxSkillFirstValue);
+            this.tabPage3.Controls.Add(this.comboBoxSkillSecond);
+            this.tabPage3.Controls.Add(this.comboBoxSkillFirst);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label11);
@@ -611,8 +623,29 @@
             this.tabPage3.Text = "Equipment Box";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBoxSkillSecond
+            // 
+            this.comboBoxSkillSecond.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSkillSecond.FormattingEnabled = true;
+            this.comboBoxSkillSecond.Location = new System.Drawing.Point(402, 144);
+            this.comboBoxSkillSecond.Name = "comboBoxSkillSecond";
+            this.comboBoxSkillSecond.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSkillSecond.TabIndex = 8;
+            this.comboBoxSkillSecond.TextChanged += new System.EventHandler(this.comboBoxSkillSecond_TextChanged);
+            // 
+            // comboBoxSkillFirst
+            // 
+            this.comboBoxSkillFirst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSkillFirst.FormattingEnabled = true;
+            this.comboBoxSkillFirst.Location = new System.Drawing.Point(402, 117);
+            this.comboBoxSkillFirst.Name = "comboBoxSkillFirst";
+            this.comboBoxSkillFirst.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSkillFirst.TabIndex = 7;
+            this.comboBoxSkillFirst.TextUpdate += new System.EventHandler(this.comboBoxSkillFirst_TextUpdate);
+            // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(353, 80);
             this.label13.Name = "label13";
@@ -622,6 +655,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(353, 54);
             this.label12.Name = "label12";
@@ -631,6 +665,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(353, 27);
             this.label11.Name = "label11";
@@ -640,6 +675,7 @@
             // 
             // numEquipLevel
             // 
+            this.numEquipLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numEquipLevel.Location = new System.Drawing.Point(402, 78);
             this.numEquipLevel.Maximum = new decimal(new int[] {
             255,
@@ -653,6 +689,7 @@
             // 
             // comboBoxEquipID
             // 
+            this.comboBoxEquipID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEquipID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEquipID.FormattingEnabled = true;
             this.comboBoxEquipID.Location = new System.Drawing.Point(402, 51);
@@ -663,6 +700,7 @@
             // 
             // comboBoxEquipType
             // 
+            this.comboBoxEquipType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEquipType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEquipType.FormattingEnabled = true;
             this.comboBoxEquipType.Location = new System.Drawing.Point(402, 24);
@@ -705,6 +743,34 @@
             this.iDAvailableBindingSource.DataMember = "IDAvailable";
             this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
             // 
+            // textBoxSkillFirstValue
+            // 
+            this.textBoxSkillFirstValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSkillFirstValue.Location = new System.Drawing.Point(537, 117);
+            this.textBoxSkillFirstValue.Name = "textBoxSkillFirstValue";
+            this.textBoxSkillFirstValue.Size = new System.Drawing.Size(51, 20);
+            this.textBoxSkillFirstValue.TabIndex = 9;
+            this.textBoxSkillFirstValue.TextChanged += new System.EventHandler(this.textBoxSkillFirstValue_TextChanged);
+            // 
+            // textBoxSkillSecondValue
+            // 
+            this.textBoxSkillSecondValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSkillSecondValue.Location = new System.Drawing.Point(537, 144);
+            this.textBoxSkillSecondValue.Name = "textBoxSkillSecondValue";
+            this.textBoxSkillSecondValue.Size = new System.Drawing.Size(51, 20);
+            this.textBoxSkillSecondValue.TabIndex = 10;
+            this.textBoxSkillSecondValue.TextChanged += new System.EventHandler(this.textBoxSkillSecondValue_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(353, 134);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Skills";
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -725,7 +791,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 200;
+            this.nameDataGridViewTextBoxColumn.Width = 175;
             // 
             // monHunItemBindingSource
             // 
@@ -821,9 +887,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource monHunItemBindingSource;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -863,6 +926,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBoxSkillFirst;
+        private System.Windows.Forms.ComboBox comboBoxSkillSecond;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxSkillSecondValue;
+        private System.Windows.Forms.TextBox textBoxSkillFirstValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }
 
