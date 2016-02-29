@@ -16,6 +16,13 @@ namespace mhxedit
         public MonHunEquip[] equipBox;
 
 
+        public MonHunEquip ReloadEquip(int idx)
+        {
+            if (idx < 0 || idx > equipBox.Length - 1) return equipBox[idx];
+            equipBox[idx] = MonHunEquip.Create(equipBox[idx].Serialize());
+            return equipBox[idx];
+        }
+
         public byte[] SerializeBase()
         {
             byte[] ret = new byte[42];

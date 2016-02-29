@@ -15,11 +15,12 @@ namespace mhxedit
 
     public class MonHunEquip
     {
-        byte _type;
-        byte _id;
-        byte _res1;
-        byte _level;
-        byte[] _unk1;
+        protected byte _type;
+        protected byte _id;
+        protected byte _res1;
+        protected byte _level;
+        protected byte[] _unk1;
+        protected byte _slots;
 
         public string Type
         {
@@ -61,6 +62,7 @@ namespace mhxedit
                     case 5:
                         return allLegs[_id];
                     case 6:
+                        if (_id > allTalisman.Length - 1) return "";
                         return allTalisman[_id];
                     case 7:
                         return allGreatsword[_id];
@@ -174,7 +176,21 @@ namespace mhxedit
                     _level = (byte)(value - 1);
             }
         }
-        
+
+        public byte Slots
+        {
+            get
+            {
+                return _slots;
+            }
+            set
+            {
+                if (value < 4)
+                {
+                    _slots = value;
+                }
+            }
+        }
 
 
 
@@ -188,6 +204,8 @@ namespace mhxedit
 
             _unk1 = new byte[32];
             Array.Copy(equip, 4, _unk1, 0, _unk1.Length);
+
+            _slots = equip[16];
         }
 
         public static MonHunEquip Create(byte[] equip)
@@ -219,6 +237,8 @@ namespace mhxedit
             ret[3] = _level;
 
             Array.Copy(_unk1, 0, ret, 4, _unk1.Length);
+
+            ret[16] = _slots;
 
             return ret;
         }

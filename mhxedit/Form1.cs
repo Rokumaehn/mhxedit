@@ -206,60 +206,73 @@ namespace mhxedit
             if(e.RowIndex > -1)
             {
                 var dgv = monHunEquipDataGridView;
+                if ((dgv.DataSource as BindingSource).List.Count < e.RowIndex + 1) return;
                 var obj = (dgv.DataSource as BindingSource).List[e.RowIndex] as MonHunEquip;
 
-                _equipSelectionUpdating = true;
-
-                _selEquip = obj;
-
-                comboBoxEquipType.DataSource = obj.TypeAvailable;
-                comboBoxEquipType.SelectedItem = obj.Type;
-
-                comboBoxEquipID.DataSource = obj.IDAvailable;
-                comboBoxEquipID.SelectedItem = obj.ID;
-
-                numEquipLevel.Value = obj.Level;
-
-                if(_selEquip is MonHunTalisman)
-                {
-                    MonHunTalisman tal = _selEquip as MonHunTalisman;
-
-                    comboBoxSkillFirst.DataSource = MonHunTalisman.dictSkills.Values.ToArray();
-                    if (tal.SkillFirstKnown()) comboBoxSkillFirst.SelectedItem = tal.SkillFirst;
-                    else comboBoxSkillFirst.Text = tal.SkillFirst;
-
-                    comboBoxSkillSecond.BindingContext = new BindingContext();
-                    comboBoxSkillSecond.DataSource = MonHunTalisman.dictSkills.Values.ToArray();
-                    if (tal.SkillSecondKnown()) comboBoxSkillSecond.SelectedItem = tal.SkillSecond;
-                    else comboBoxSkillSecond.Text = tal.SkillSecond;
-
-                    textBoxSkillFirstValue.Text = tal.SkillFirstValue.ToString();
-                    textBoxSkillSecondValue.Text = tal.SkillSecondValue.ToString();
-                }
-                else
-                {
-                    comboBoxSkillFirst.SelectedItem = null;
-                    comboBoxSkillFirst.DataSource = null;
-                    comboBoxSkillSecond.SelectedItem = null;
-                    comboBoxSkillSecond.DataSource = null;
-                    textBoxSkillFirstValue.Text = string.Empty;
-                    textBoxSkillSecondValue.Text = string.Empty;
-                }
-
-                _equipSelectionUpdating = false;
+                UpdateSelectedEquip(obj);
             }
         }
 
         bool _equipSelectionUpdating = false;
         MonHunEquip _selEquip = null;
 
+
+        public void UpdateSelectedEquip(MonHunEquip obj)
+        {
+            _equipSelectionUpdating = true;
+
+            comboBoxEquipType.DataSource = null;
+            comboBoxEquipID.DataSource = null;
+
+            _selEquip = obj;
+
+            comboBoxEquipType.DataSource = obj.TypeAvailable;
+            comboBoxEquipType.SelectedItem = obj.Type;
+
+            comboBoxEquipID.DataSource = obj.IDAvailable;
+            comboBoxEquipID.SelectedItem = obj.ID;
+
+            numEquipLevel.Value = obj.Level;
+
+            numSlots.Value = obj.Slots;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                MonHunTalisman tal = _selEquip as MonHunTalisman;
+
+                comboBoxSkillFirst.DataSource = MonHunTalisman.dictSkills.Values.ToArray();
+                if (tal.SkillFirstKnown()) comboBoxSkillFirst.SelectedItem = tal.SkillFirst;
+                else comboBoxSkillFirst.Text = tal.SkillFirst;
+
+                comboBoxSkillSecond.BindingContext = new BindingContext();
+                comboBoxSkillSecond.DataSource = MonHunTalisman.dictSkills.Values.ToArray();
+                if (tal.SkillSecondKnown()) comboBoxSkillSecond.SelectedItem = tal.SkillSecond;
+                else comboBoxSkillSecond.Text = tal.SkillSecond;
+
+                textBoxSkillFirstValue.Text = tal.SkillFirstValue.ToString();
+                textBoxSkillSecondValue.Text = tal.SkillSecondValue.ToString();
+            }
+            else
+            {
+                comboBoxSkillFirst.SelectedItem = null;
+                comboBoxSkillFirst.DataSource = null;
+                comboBoxSkillSecond.SelectedItem = null;
+                comboBoxSkillSecond.DataSource = null;
+                textBoxSkillFirstValue.Text = string.Empty;
+                textBoxSkillSecondValue.Text = string.Empty;
+            }
+
+            _equipSelectionUpdating = false;
+        }
+
         private void comboBoxEquipType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_equipSelectionUpdating) return;
 
             _selEquip.Type = comboBoxEquipType.SelectedItem.ToString();
-            comboBoxEquipID.DataSource = _selEquip.IDAvailable;
-            comboBoxEquipID.SelectedItem = _selEquip.ID;
+            _selEquip = selSlot.ReloadEquip(monHunEquipDataGridView.SelectedRows[0].Index);
+            monHunEquipBindingSource[monHunEquipDataGridView.SelectedRows[0].Index] = _selEquip;
+            UpdateSelectedEquip(_selEquip);
 
             monHunEquipDataGridView.InvalidateRow( monHunEquipDataGridView.CurrentRow.Index );
         }
@@ -346,6 +359,15 @@ namespace mhxedit
                 var obj = _selEquip as MonHunTalisman;
                 obj.SkillSecondValue = textBoxSkillSecondValue.Text;
             }
+        }
+
+        private void numSlots_ValueChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
+
+            _selEquip.Slots = (byte)(numSlots.Value);
+
+            monHunEquipDataGridView.InvalidateRow(monHunEquipDataGridView.CurrentRow.Index);
         }
     }
 
