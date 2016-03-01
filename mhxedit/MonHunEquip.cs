@@ -15,12 +15,12 @@ namespace mhxedit
 
     public class MonHunEquip
     {
-        protected byte _type;
-        protected byte _id;
-        protected byte _res1;
-        protected byte _level;
-        protected byte[] _unk1;
-        protected byte _slots;
+        protected byte _type = 0;
+        protected byte _id = 0;
+        protected byte _res1 = 0;
+        protected byte _level = 0;
+        protected byte[] _unk1 = null;
+        protected byte _slots = 0;
 
         public string Type
         {
@@ -62,7 +62,7 @@ namespace mhxedit
                     case 5:
                         return allLegs[_id];
                     case 6:
-                        if (_id > allTalisman.Length - 1) return "";
+                        //if (_id > allTalisman.Length - 1) return "";
                         return allTalisman[_id];
                     case 7:
                         return allGreatsword[_id];
@@ -197,6 +197,12 @@ namespace mhxedit
         public MonHunEquip(byte[] equip)
         {
             _type = equip[0];
+            if (_type == 0)
+            {
+                _unk1 = new byte[32];
+                for (int i = 0; i < _unk1.Length; i++) _unk1[i] = 0;
+                return;
+            }
 
             _id = equip[1];
             _res1 = equip[2];

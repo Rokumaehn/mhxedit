@@ -8,9 +8,9 @@ namespace mhxedit
     public class MonHunTalisman : MonHunEquip
     {
         byte _skillFirstID;
-        byte _skillFirstVal;
+        sbyte _skillFirstVal;
         byte _skillSecondID;
-        byte _skillSecondVal;
+        sbyte _skillSecondVal;
         byte _unkTal1;
         byte _unkTal2;
 
@@ -89,8 +89,8 @@ namespace mhxedit
             }
             set
             {
-                byte uVal = 0;
-                if (byte.TryParse(value, out uVal))
+                sbyte uVal = 0;
+                if (sbyte.TryParse(value, out uVal))
                 {
                     _skillFirstVal = uVal;
                 }
@@ -105,10 +105,42 @@ namespace mhxedit
             }
             set
             {
+                sbyte uVal = 0;
+                if (sbyte.TryParse(value, out uVal))
+                {
+                    _skillSecondVal = uVal;
+                }
+            }
+        }
+
+        public string UnkTal1
+        {
+            get
+            {
+                return _unkTal1.ToString();
+            }
+            set
+            {
                 byte uVal = 0;
                 if (byte.TryParse(value, out uVal))
                 {
-                    _skillSecondVal = uVal;
+                    _unkTal1 = uVal;
+                }
+            }
+        }
+
+        public string UnkTal2
+        {
+            get
+            {
+                return _unkTal2.ToString();
+            }
+            set
+            {
+                byte uVal = 0;
+                if (byte.TryParse(value, out uVal))
+                {
+                    _unkTal2 = uVal;
                 }
             }
         }
@@ -119,8 +151,8 @@ namespace mhxedit
 
             _skillFirstID = equip[12];
             _skillSecondID = equip[13];
-            _skillFirstVal = equip[14];
-            _skillSecondVal = equip[15];
+            _skillFirstVal = (sbyte)(equip[14]);
+            _skillSecondVal = (sbyte)(equip[15]);
 
             if (!(equip[18] == 0 && equip[19] == 0))
             {
@@ -140,8 +172,11 @@ namespace mhxedit
 
             ret[12] = _skillFirstID;
             ret[13] = _skillSecondID;
-            ret[14] = _skillFirstVal;
-            ret[15] = _skillSecondVal;
+            ret[14] = (byte)_skillFirstVal;
+            ret[15] = (byte)_skillSecondVal;
+
+            ret[18] = _unkTal1;
+            ret[19] = _unkTal2;
 
             return ret;
         }
@@ -232,6 +267,74 @@ namespace mhxedit
             { 78, "Evasion"},
             { 79, "Evade Dist"},
             { 80, "Bubbles"},
+            { 81, "Guard"},
+            { 82, "Guard Boost"},
+            { 83, "KO"},
+            { 84, "Stam Drain"},
+            { 85, "Maestro"},
+            { 86, "Artillery"},
+            { 87, "Destroyer"},
+            { 88, "Bomb Boost"},
+            { 89, "Gloves Off"},
+            { 90, "Spirit"},
+            { 91, "Unscathed"},
+            { 92, "Chance"},
+            { 93, "Potential"},
+            { 94, "Survivor"},
+            { 95, "Rage"},
+            { 96, "Predicament"},
+            { 97, "Guts"},
+            { 98, "Sense"},
+            { 99, "TeamPlayer"},
+            {100, "TeamLeader"},
+            {101, "Mounting"},
+            {102, "Leaping"},
+            {103, "Clear Mind"},
+            {104, "Psychic"},
+            {105, "Perception"},
+            {106, "Scout"},
+            {107, "Transporting"},
+            {108, "Protection"},
+            {109, "Buckler"},
+            {110, "Rec Level"},
+            {111, "Rec Speed"},
+            {112, "LastingPwr"},
+            {113, "Wide-Range"},
+            {114, "Hunger"},
+            {115, "Gluttony"},
+            {116, "Eating"},
+            {117, "LightEater"},
+            {118, "Carnivore"},
+            {119, "Mycology"},
+            {120, "Herbalism"},
+            {121, "Combo Rate"},
+            {122, "Combo Plus"},
+            {123, "SpeedSetup"},
+            {124, "Gathering"},
+            {125, "Honey"},
+            {126, "Charmer"},
+            {127, "Whim"},
+            {128, "Fate"},
+            {129, "Carving"},
+            {130, "Capts"},
+            {131, "Beruna"},
+            {132, "Kokoto"},
+            {133, "Pokke"},
+            {134, "Yukumo"},
+            {135, "Crimson Helmet"},
+            {136, "Heavy Snow"},
+            {137, "Arms Breaker"},
+            {138, "Boulder Piercer"},
+            {139, "Purple Poison"},
+            {140, "Treasure Carrier"},
+            {141, "White Gale"},
+            {142, "One Eyed"},
+            {143, "Black Blaze"},
+            {144, "Gold Thunder"},
+            {145, "Raging Talon"},
+            {146, "Ember Blade"},
+            {147, "D. Fencing"},
+            {148, "Torso Up"}
         };
     }
 }

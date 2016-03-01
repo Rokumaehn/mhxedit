@@ -249,8 +249,11 @@ namespace mhxedit
                 if (tal.SkillSecondKnown()) comboBoxSkillSecond.SelectedItem = tal.SkillSecond;
                 else comboBoxSkillSecond.Text = tal.SkillSecond;
 
-                textBoxSkillFirstValue.Text = tal.SkillFirstValue.ToString();
-                textBoxSkillSecondValue.Text = tal.SkillSecondValue.ToString();
+                textBoxSkillFirstValue.Text = tal.SkillFirstValue;
+                textBoxSkillSecondValue.Text = tal.SkillSecondValue;
+
+                textBoxTalRes1.Text = tal.UnkTal1;
+                textBoxTalRes2.Text = tal.UnkTal2;
             }
             else
             {
@@ -260,6 +263,8 @@ namespace mhxedit
                 comboBoxSkillSecond.DataSource = null;
                 textBoxSkillFirstValue.Text = string.Empty;
                 textBoxSkillSecondValue.Text = string.Empty;
+                textBoxTalRes1.Text = string.Empty;
+                textBoxTalRes2.Text = string.Empty;
             }
 
             _equipSelectionUpdating = false;
@@ -313,7 +318,12 @@ namespace mhxedit
 
         private void comboBoxSkillFirst_TextUpdate(object sender, EventArgs e)
         {
-            if(_equipSelectionUpdating) return;
+
+        }
+
+        private void comboBoxSkillFirst_TextChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
 
             if (_selEquip is MonHunTalisman)
             {
@@ -368,6 +378,28 @@ namespace mhxedit
             _selEquip.Slots = (byte)(numSlots.Value);
 
             monHunEquipDataGridView.InvalidateRow(monHunEquipDataGridView.CurrentRow.Index);
+        }
+
+        private void textBoxTalRes1_TextChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                var obj = _selEquip as MonHunTalisman;
+                obj.UnkTal1 = textBoxTalRes1.Text;
+            }
+        }
+
+        private void textBoxTalRes2_TextChanged(object sender, EventArgs e)
+        {
+            if (_equipSelectionUpdating) return;
+
+            if (_selEquip is MonHunTalisman)
+            {
+                var obj = _selEquip as MonHunTalisman;
+                obj.UnkTal1 = textBoxTalRes2.Text;
+            }
         }
     }
 

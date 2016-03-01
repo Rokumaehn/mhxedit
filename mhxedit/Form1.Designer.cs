@@ -75,11 +75,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monHunItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.numSlots = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxSkillSecondValue = new System.Windows.Forms.TextBox();
             this.textBoxSkillFirstValue = new System.Windows.Forms.TextBox();
@@ -92,14 +91,17 @@
             this.comboBoxEquipID = new System.Windows.Forms.ComboBox();
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.monHunEquipDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxTalRes1 = new System.Windows.Forms.TextBox();
+            this.textBoxTalRes2 = new System.Windows.Forms.TextBox();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monHunItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monHunEquipBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numSlots = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -113,13 +115,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLoopCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStartID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSlots)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHunEquipDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDAvailableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSlots)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -605,34 +607,10 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // monHunItemBindingSource
-            // 
-            this.monHunItemBindingSource.DataSource = typeof(mhxedit.MonHunItem);
-            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.textBoxTalRes2);
+            this.tabPage3.Controls.Add(this.textBoxTalRes1);
             this.tabPage3.Controls.Add(this.numSlots);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label15);
@@ -655,6 +633,40 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Equipment Box";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // numSlots
+            // 
+            this.numSlots.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numSlots.Location = new System.Drawing.Point(402, 180);
+            this.numSlots.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numSlots.Name = "numSlots";
+            this.numSlots.Size = new System.Drawing.Size(49, 20);
+            this.numSlots.TabIndex = 15;
+            this.numSlots.ValueChanged += new System.EventHandler(this.numSlots_ValueChanged);
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(459, 182);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(123, 13);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "(0 = Default for that item)";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(353, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Slots";
             // 
             // label14
             // 
@@ -702,7 +714,7 @@
             this.comboBoxSkillFirst.Name = "comboBoxSkillFirst";
             this.comboBoxSkillFirst.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSkillFirst.TabIndex = 7;
-            this.comboBoxSkillFirst.TextUpdate += new System.EventHandler(this.comboBoxSkillFirst_TextUpdate);
+            this.comboBoxSkillFirst.TextChanged += new System.EventHandler(this.comboBoxSkillFirst_TextChanged);
             // 
             // label13
             // 
@@ -799,6 +811,53 @@
             this.monHunEquipDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.monHunEquipDataGridView_DataBindingComplete);
             this.monHunEquipDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.monHunEquipDataGridView_RowEnter);
             // 
+            // iDAvailableBindingSource
+            // 
+            this.iDAvailableBindingSource.DataMember = "IDAvailable";
+            this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
+            // 
+            // textBoxTalRes1
+            // 
+            this.textBoxTalRes1.Location = new System.Drawing.Point(402, 219);
+            this.textBoxTalRes1.Name = "textBoxTalRes1";
+            this.textBoxTalRes1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTalRes1.TabIndex = 16;
+            this.textBoxTalRes1.TextChanged += new System.EventHandler(this.textBoxTalRes1_TextChanged);
+            // 
+            // textBoxTalRes2
+            // 
+            this.textBoxTalRes2.Location = new System.Drawing.Point(402, 245);
+            this.textBoxTalRes2.Name = "textBoxTalRes2";
+            this.textBoxTalRes2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTalRes2.TabIndex = 17;
+            this.textBoxTalRes2.TextChanged += new System.EventHandler(this.textBoxTalRes2_TextChanged);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.countDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // monHunItemBindingSource
+            // 
+            this.monHunItemBindingSource.DataSource = typeof(mhxedit.MonHunItem);
+            // 
             // typeDataGridViewTextBoxColumn
             // 
             this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
@@ -827,45 +886,6 @@
             // monHunEquipBindingSource
             // 
             this.monHunEquipBindingSource.DataSource = typeof(mhxedit.MonHunEquip);
-            // 
-            // iDAvailableBindingSource
-            // 
-            this.iDAvailableBindingSource.DataMember = "IDAvailable";
-            this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(353, 182);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(30, 13);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "Slots";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(459, 182);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(123, 13);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "(0 = Default for that item)";
-            // 
-            // numSlots
-            // 
-            this.numSlots.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numSlots.Location = new System.Drawing.Point(402, 180);
-            this.numSlots.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numSlots.Name = "numSlots";
-            this.numSlots.Size = new System.Drawing.Size(49, 20);
-            this.numSlots.TabIndex = 15;
-            this.numSlots.ValueChanged += new System.EventHandler(this.numSlots_ValueChanged);
             // 
             // Form1
             // 
@@ -896,14 +916,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLoopCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStartID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSlots)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHunEquipDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDAvailableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSlots)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -979,6 +999,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numSlots;
+        private System.Windows.Forms.TextBox textBoxTalRes2;
+        private System.Windows.Forms.TextBox textBoxTalRes1;
     }
 }
 
