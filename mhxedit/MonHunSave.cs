@@ -58,6 +58,9 @@ namespace mhxedit
                     // Write Item Box
                     file.Seek(slotOffsets[i] + 0x290, SeekOrigin.Begin);
                     writer.Write(slots[i].SerializeItemBox());
+                    // Write Extended
+                    file.Seek(slotOffsets[i] + 0x1476, SeekOrigin.Begin);
+                    writer.Write(slots[i].SerializeExtended());
                     // Write Equipment Box
                     file.Seek(slotOffsets[i] + 0x4667, SeekOrigin.Begin);
                     writer.Write(slots[i].SerializeEquipmentBox());

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,10 +76,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monHunItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBoxTalRes2 = new System.Windows.Forms.TextBox();
             this.textBoxTalRes1 = new System.Windows.Forms.TextBox();
@@ -97,11 +94,28 @@
             this.comboBoxEquipID = new System.Windows.Forms.ComboBox();
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.monHunEquipDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monHunItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monHunEquipBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxKokotoPoints = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxRankPoints = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxAcademyPoints = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxPokkePoints = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxYukumoPoints = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxBerunaPoints = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -115,13 +129,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLoopCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStartID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSlots)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHunEquipDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDAvailableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -148,14 +162,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -213,6 +227,18 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.textBoxBerunaPoints);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.textBoxYukumoPoints);
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.textBoxPokkePoints);
+            this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.textBoxAcademyPoints);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.textBoxRankPoints);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.textBoxKokotoPoints);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.textBoxRank);
@@ -232,7 +258,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 88);
+            this.label4.Location = new System.Drawing.Point(7, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 7;
@@ -241,7 +267,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 62);
+            this.label3.Location = new System.Drawing.Point(7, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 6;
@@ -249,24 +275,29 @@
             // 
             // textBoxRank
             // 
-            this.textBoxRank.Location = new System.Drawing.Point(95, 85);
+            this.textBoxRank.Location = new System.Drawing.Point(95, 112);
             this.textBoxRank.Name = "textBoxRank";
-            this.textBoxRank.Size = new System.Drawing.Size(144, 20);
+            this.textBoxRank.Size = new System.Drawing.Size(92, 20);
             this.textBoxRank.TabIndex = 5;
+            this.textBoxRank.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxRank.TextChanged += new System.EventHandler(this.textBoxRank_TextChanged);
             // 
             // textBoxZenny
             // 
-            this.textBoxZenny.Location = new System.Drawing.Point(95, 59);
+            this.textBoxZenny.Location = new System.Drawing.Point(95, 71);
             this.textBoxZenny.Name = "textBoxZenny";
-            this.textBoxZenny.Size = new System.Drawing.Size(144, 20);
+            this.textBoxZenny.Size = new System.Drawing.Size(92, 20);
             this.textBoxZenny.TabIndex = 4;
+            this.textBoxZenny.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxZenny.TextChanged += new System.EventHandler(this.textBoxZenny_TextChanged);
             // 
             // textBoxPlayTime
             // 
-            this.textBoxPlayTime.Location = new System.Drawing.Point(95, 33);
+            this.textBoxPlayTime.Location = new System.Drawing.Point(95, 45);
             this.textBoxPlayTime.Name = "textBoxPlayTime";
-            this.textBoxPlayTime.Size = new System.Drawing.Size(144, 20);
+            this.textBoxPlayTime.Size = new System.Drawing.Size(92, 20);
             this.textBoxPlayTime.TabIndex = 3;
+            this.textBoxPlayTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxName
             // 
@@ -279,7 +310,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 36);
+            this.label2.Location = new System.Drawing.Point(7, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -601,40 +632,23 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowHeadersWidth = 65;
             this.dataGridView1.Size = new System.Drawing.Size(363, 392);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // monHunItemBindingSource
-            // 
-            this.monHunItemBindingSource.DataSource = typeof(mhxedit.MonHunItem);
-            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label21);
             this.tabPage3.Controls.Add(this.textBoxTalRes2);
             this.tabPage3.Controls.Add(this.textBoxTalRes1);
             this.tabPage3.Controls.Add(this.numSlots);
@@ -837,20 +851,51 @@
             this.monHunEquipDataGridView.DataSource = this.monHunEquipBindingSource;
             this.monHunEquipDataGridView.Location = new System.Drawing.Point(6, 6);
             this.monHunEquipDataGridView.Name = "monHunEquipDataGridView";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.monHunEquipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.monHunEquipDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.monHunEquipDataGridView.RowHeadersWidth = 65;
             this.monHunEquipDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.monHunEquipDataGridView.Size = new System.Drawing.Size(326, 392);
             this.monHunEquipDataGridView.TabIndex = 0;
             this.monHunEquipDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.monHunEquipDataGridView_DataBindingComplete);
             this.monHunEquipDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.monHunEquipDataGridView_RowEnter);
+            // 
+            // iDAvailableBindingSource
+            // 
+            this.iDAvailableBindingSource.DataMember = "IDAvailable";
+            this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.countDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // monHunItemBindingSource
+            // 
+            this.monHunItemBindingSource.DataSource = typeof(mhxedit.MonHunItem);
             // 
             // typeDataGridViewTextBoxColumn
             // 
@@ -869,9 +914,9 @@
             // levelDataGridViewTextBoxColumn
             // 
             this.levelDataGridViewTextBoxColumn.DataPropertyName = "Level";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.NullValue = null;
-            this.levelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.NullValue = null;
+            this.levelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.levelDataGridViewTextBoxColumn.HeaderText = "Level";
             this.levelDataGridViewTextBoxColumn.Name = "levelDataGridViewTextBoxColumn";
             this.levelDataGridViewTextBoxColumn.ReadOnly = true;
@@ -881,10 +926,122 @@
             // 
             this.monHunEquipBindingSource.DataSource = typeof(mhxedit.MonHunEquip);
             // 
-            // iDAvailableBindingSource
+            // label17
             // 
-            this.iDAvailableBindingSource.DataMember = "IDAvailable";
-            this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(283, 100);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(73, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Kokoto Points";
+            // 
+            // textBoxKokotoPoints
+            // 
+            this.textBoxKokotoPoints.Location = new System.Drawing.Point(371, 97);
+            this.textBoxKokotoPoints.Name = "textBoxKokotoPoints";
+            this.textBoxKokotoPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxKokotoPoints.TabIndex = 8;
+            this.textBoxKokotoPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxKokotoPoints.TextChanged += new System.EventHandler(this.textBoxKokotoPoints_TextChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 141);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(55, 13);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "HR Points";
+            // 
+            // textBoxRankPoints
+            // 
+            this.textBoxRankPoints.Location = new System.Drawing.Point(95, 138);
+            this.textBoxRankPoints.Name = "textBoxRankPoints";
+            this.textBoxRankPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxRankPoints.TabIndex = 10;
+            this.textBoxRankPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxRankPoints.TextChanged += new System.EventHandler(this.textBoxRankPoints_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(283, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 13);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Academy Points";
+            // 
+            // textBoxAcademyPoints
+            // 
+            this.textBoxAcademyPoints.Location = new System.Drawing.Point(371, 45);
+            this.textBoxAcademyPoints.Name = "textBoxAcademyPoints";
+            this.textBoxAcademyPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxAcademyPoints.TabIndex = 12;
+            this.textBoxAcademyPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxAcademyPoints.TextChanged += new System.EventHandler(this.textBoxAcademyPoints_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(283, 126);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 13);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Pokke Points";
+            // 
+            // textBoxPokkePoints
+            // 
+            this.textBoxPokkePoints.Location = new System.Drawing.Point(371, 123);
+            this.textBoxPokkePoints.Name = "textBoxPokkePoints";
+            this.textBoxPokkePoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxPokkePoints.TabIndex = 14;
+            this.textBoxPokkePoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPokkePoints.TextChanged += new System.EventHandler(this.textBoxPokkePoints_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(283, 152);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "Yukumo Points";
+            // 
+            // textBoxYukumoPoints
+            // 
+            this.textBoxYukumoPoints.Location = new System.Drawing.Point(371, 149);
+            this.textBoxYukumoPoints.Name = "textBoxYukumoPoints";
+            this.textBoxYukumoPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxYukumoPoints.TabIndex = 18;
+            this.textBoxYukumoPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxYukumoPoints.TextChanged += new System.EventHandler(this.textBoxYukumoPoints_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(283, 74);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 13);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "Beruna Points";
+            // 
+            // textBoxBerunaPoints
+            // 
+            this.textBoxBerunaPoints.Location = new System.Drawing.Point(371, 71);
+            this.textBoxBerunaPoints.Name = "textBoxBerunaPoints";
+            this.textBoxBerunaPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxBerunaPoints.TabIndex = 20;
+            this.textBoxBerunaPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxBerunaPoints.TextChanged += new System.EventHandler(this.textBoxBerunaPoints_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(526, 55);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "by Value or Name!";
             // 
             // Form1
             // 
@@ -915,14 +1072,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLoopCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStartID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSlots)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEquipLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHunEquipDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDAvailableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHunEquipBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1000,6 +1157,19 @@
         private System.Windows.Forms.NumericUpDown numSlots;
         private System.Windows.Forms.TextBox textBoxTalRes2;
         private System.Windows.Forms.TextBox textBoxTalRes1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxKokotoPoints;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBoxBerunaPoints;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBoxYukumoPoints;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBoxPokkePoints;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBoxAcademyPoints;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxRankPoints;
+        private System.Windows.Forms.Label label21;
     }
 }
 

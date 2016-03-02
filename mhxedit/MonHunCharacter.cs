@@ -8,10 +8,21 @@ namespace mhxedit
 {
     public class MonHunCharacter
     {
+        // Basic
         public string name;
         public uint playTime;
         public uint zenny;
         public ushort hr;
+        // Extended
+        public uint hrPoints;
+        public uint funds2;
+        public uint extUnknown1;
+        public uint academyPoints;
+        public uint berunaPoints;
+        public uint kokotoPoints;
+        public uint pokkePoints;
+        public uint yukumoPoints;
+
         public MonHunItem[] itemBox;
         public MonHunEquip[] equipBox;
 
@@ -35,6 +46,23 @@ namespace mhxedit
             writer.Write(playTime);
             writer.Write(zenny);
             writer.Write(hr);
+
+            return ret;
+        }
+
+        public byte[] SerializeExtended()
+        {
+            byte[] ret = new byte[4 * 8];
+            BinaryWriter writer = new BinaryWriter(new MemoryStream(ret));
+
+            writer.Write(hrPoints);
+            writer.Write(funds2);
+            writer.Write(extUnknown1);
+            writer.Write(academyPoints);
+            writer.Write(berunaPoints);
+            writer.Write(kokotoPoints);
+            writer.Write(pokkePoints);
+            writer.Write(yukumoPoints);
 
             return ret;
         }
@@ -87,6 +115,16 @@ namespace mhxedit
             zenny = reader.ReadUInt32();
             hr = reader.ReadUInt16();
 
+            reader.BaseStream.Seek(0x1476, SeekOrigin.Begin);
+            hrPoints = reader.ReadUInt32();
+            funds2 = reader.ReadUInt32();
+            extUnknown1 = reader.ReadUInt32();
+            academyPoints = reader.ReadUInt32();
+            berunaPoints = reader.ReadUInt32();
+            kokotoPoints = reader.ReadUInt32();
+            pokkePoints = reader.ReadUInt32();
+            yukumoPoints = reader.ReadUInt32();
+
             reader.BaseStream.Seek(0x290, SeekOrigin.Begin);
             uint buffer = 0;
             uint bits = 0;
@@ -115,7 +153,6 @@ namespace mhxedit
             reader.BaseStream.Seek(0x4667, SeekOrigin.Begin);
             for (int i = 0; i < 1400; i++)
             {
-                //equipBox[i] = new MonHunEquip(reader.ReadBytes(36));
                 equipBox[i] = MonHunEquip.Create(reader.ReadBytes(36));
             }
         }

@@ -47,6 +47,12 @@ namespace mhxedit
             textBoxZenny.Text = selSlot.zenny.ToString();
             textBoxRank.Text = selSlot.hr.ToString();
 
+            textBoxRankPoints.Text = selSlot.hrPoints.ToString();
+            textBoxAcademyPoints.Text = selSlot.academyPoints.ToString();
+            textBoxBerunaPoints.Text = selSlot.berunaPoints.ToString();
+            textBoxKokotoPoints.Text = selSlot.kokotoPoints.ToString();
+            textBoxPokkePoints.Text = selSlot.pokkePoints.ToString();
+            textBoxYukumoPoints.Text = selSlot.yukumoPoints.ToString();
 
             monHunItemBindingSource.Clear();
             foreach (var item in selSlot.itemBox)
@@ -58,26 +64,6 @@ namespace mhxedit
             foreach (var item in selSlot.equipBox)
             {
                 monHunEquipBindingSource.Add(item);
-
-                /*
-                DataGridViewRow row = new DataGridViewRow();
-
-                var type = new DataGridViewTextBoxCell();
-                var id = new DataGridViewComboBoxCell();
-                var level = new DataGridViewTextBoxCell();
-
-                type.Value = item.Type;
-                level.Value = item.Level;
-                id.DataSource = MonHunEquip.allGreatsword;
-
-                row.Cells.Add(type);
-                row.Cells.Add(id);
-                row.Cells.Add(level);
-
-                monHunEquipDataGridView.Rows.Add(row);
-
-                break;
-                */
             }
         }
 
@@ -399,6 +385,78 @@ namespace mhxedit
             {
                 var obj = _selEquip as MonHunTalisman;
                 obj.UnkTal1 = textBoxTalRes2.Text;
+            }
+        }
+
+        private void textBoxZenny_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if(uint.TryParse(textBoxZenny.Text, out val))
+            {
+                selSlot.zenny = val;
+            }
+        }
+
+        private void textBoxRank_TextChanged(object sender, EventArgs e)
+        {
+            ushort val = 0;
+            if (ushort.TryParse(textBoxRank.Text, out val))
+            {
+                selSlot.hr = val;
+            }
+        }
+
+        private void textBoxRankPoints_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if (uint.TryParse(textBoxRankPoints.Text, out val))
+            {
+                selSlot.hrPoints = val;
+            }
+        }
+
+        private void textBoxAcademyPoints_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if (uint.TryParse(textBoxAcademyPoints.Text, out val))
+            {
+                selSlot.academyPoints = val;
+            }
+        }
+
+        private void textBoxBerunaPoints_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if (uint.TryParse(textBoxBerunaPoints.Text, out val))
+            {
+                selSlot.berunaPoints = val;
+            }
+        }
+
+        private void textBoxKokotoPoints_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if (uint.TryParse(textBoxKokotoPoints.Text, out val))
+            {
+                selSlot.kokotoPoints = val;
+            }
+        }
+
+        private void textBoxPokkePoints_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if (uint.TryParse(textBoxPokkePoints.Text, out val))
+            {
+                selSlot.pokkePoints = val;
+            }
+        }
+
+        private void textBoxYukumoPoints_TextChanged(object sender, EventArgs e)
+        {
+            uint val = 0;
+            if (uint.TryParse(textBoxYukumoPoints.Text, out val))
+            {
+                selSlot.yukumoPoints = val;
             }
         }
     }
