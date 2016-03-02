@@ -147,7 +147,7 @@ namespace mhxedit
 
         public MonHunTalisman(byte[] equip) : base(equip)
         {
-            if (base._id > allTalisman.Length - 1) base._id = (byte)(allTalisman.Length - 1);
+            if (base._id > dictIdsTalisman.Count - 1) base._id = (byte)(dictIdsTalisman.Count - 1);
 
             _skillFirstID = equip[12];
             _skillSecondID = equip[13];
