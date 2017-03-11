@@ -61,9 +61,21 @@ namespace mhxedit
                     // Write Extended
                     file.Seek(slotOffsets[i] + 0x1476, SeekOrigin.Begin);
                     writer.Write(slots[i].SerializeExtended());
+                    // Write flags1
+                    file.Seek(slotOffsets[i] + 0x1a22, SeekOrigin.Begin);
+                    writer.Write(slots[i].SerializeFlags1());
                     // Write Equipment Box
                     file.Seek(slotOffsets[i] + 0x4667, SeekOrigin.Begin);
                     writer.Write(slots[i].SerializeEquipmentBox());
+                    // Cratables
+                    file.Seek(slotOffsets[i] + 0x20BE, SeekOrigin.Begin);
+                    writer.Write(slots[i].SerializeCraftables());
+                    // Meals
+                    file.Seek(slotOffsets[i] + 0x1FE6C, SeekOrigin.Begin);
+                    writer.Write(slots[i].SerializeMeals());
+                    // Combo List
+                    file.Seek(slotOffsets[i] + 0x190B2, SeekOrigin.Begin);
+                    writer.Write(slots[i].SerializeComboList());
                 }
 
             }

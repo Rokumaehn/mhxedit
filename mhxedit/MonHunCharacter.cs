@@ -11,7 +11,7 @@ namespace mhxedit
         // Basic
         public string name;
         public uint playTime;
-        public uint zenny;
+        private uint funds;
         public ushort hr;
         // Extended
         public uint hrPoints;
@@ -23,9 +23,111 @@ namespace mhxedit
         public uint pokkePoints;
         public uint yukumoPoints;
 
+        public byte[] flags1;
+
         public MonHunItem[] itemBox;
         public MonHunEquip[] equipBox;
 
+        public MonHunEquip equippedWeapon;
+
+        private Craftable craftables;
+        private Meal meals;
+        private ComboList comboList;
+
+
+        public bool ItemBoxP11Unlocked
+        {
+            get
+            {
+                return (flags1[2] & 32)==32;
+            }
+
+            set
+            {
+                if (value) flags1[2] |= 32;
+                else flags1[2] &= (byte)(flags1[2] & (~32));
+            }
+        }
+
+        public bool ItemBoxP12Unlocked
+        {
+            get
+            {
+                return (flags1[2] & 64) == 64;
+            }
+
+            set
+            {
+                if (value) flags1[2] |= 64;
+                else flags1[2] &= (byte)(flags1[2] & (~64));
+            }
+        }
+
+        public bool PalicoBoxP6Unlocked
+        {
+            get
+            {
+                return (flags1[6] & 32) == 32;
+            }
+
+            set
+            {
+                if (value) flags1[6] |= 32;
+                else flags1[6] &= (byte)(flags1[6] & (~32));
+            }
+        }
+
+        public bool PalicoBoxP7Unlocked
+        {
+            get
+            {
+                return (flags1[6] & 64) == 64;
+            }
+
+            set
+            {
+                if (value) flags1[6] |= 64;
+                else flags1[6] &= (byte)(flags1[6] & (~64));
+            }
+        }
+
+        public uint Funds
+        {
+            get
+            {
+                return funds;
+            }
+
+            set
+            {
+                funds = value;
+                funds2 = value;
+            }
+        }
+
+        public Craftable Craftables
+        {
+            get
+            {
+                return craftables;
+            }
+        }
+
+        public Meal Meals
+        {
+            get
+            {
+                return meals;
+            }
+        }
+
+        public ComboList Combolist
+        {
+            get
+            {
+                return comboList;
+            }
+        }
 
         public MonHunEquip ReloadEquip(int idx)
         {
@@ -44,7 +146,7 @@ namespace mhxedit
             System.Text.Encoding.UTF8.GetBytes(name, 0, name.Length, bname, 0);
             writer.Write(bname);
             writer.Write(playTime);
-            writer.Write(zenny);
+            writer.Write(funds);
             writer.Write(hr);
 
             return ret;
@@ -66,6 +168,17 @@ namespace mhxedit
 
             return ret;
         }
+
+        public byte[] SerializeFlags1()
+        {
+            byte[] ret = new byte[8];
+            BinaryWriter writer = new BinaryWriter(new MemoryStream(ret));
+
+            writer.Write(flags1);
+
+            return ret;
+        }
+
 
         public byte[] SerializeItemBox()
         {
@@ -103,6 +216,21 @@ namespace mhxedit
             return ret;
         }
 
+        public byte[] SerializeCraftables()
+        {
+            return craftables.Serialize();
+        }
+
+        public byte[] SerializeMeals()
+        {
+            return meals.Serialize();
+        }
+
+        public byte[] SerializeComboList()
+        {
+            return comboList.Serialize();
+        }
+
         public MonHunCharacter(MemoryStream ms)
         {
             BinaryReader reader = new BinaryReader(ms);
@@ -112,8 +240,11 @@ namespace mhxedit
             reader.BaseStream.Seek(0x0, SeekOrigin.Begin);
             name = System.Text.Encoding.UTF8.GetString(reader.ReadBytes(32), 0, 32);
             playTime = reader.ReadUInt32();
-            zenny = reader.ReadUInt32();
+            funds = reader.ReadUInt32();
             hr = reader.ReadUInt16();
+
+            reader.BaseStream.Seek(0x0110, SeekOrigin.Begin);
+            equippedWeapon = MonHunEquip.Create(reader.ReadBytes(36));
 
             reader.BaseStream.Seek(0x1476, SeekOrigin.Begin);
             hrPoints = reader.ReadUInt32();
@@ -125,6 +256,10 @@ namespace mhxedit
             pokkePoints = reader.ReadUInt32();
             yukumoPoints = reader.ReadUInt32();
 
+            reader.BaseStream.Seek(0x1A22, SeekOrigin.Begin);
+            flags1 = reader.ReadBytes(8);
+
+            // Item Box
             reader.BaseStream.Seek(0x290, SeekOrigin.Begin);
             uint buffer = 0;
             uint bits = 0;
@@ -150,11 +285,21 @@ namespace mhxedit
                 }
             }
 
+            // Equipment Box
             reader.BaseStream.Seek(0x4667, SeekOrigin.Begin);
             for (int i = 0; i < 1400; i++)
             {
                 equipBox[i] = MonHunEquip.Create(reader.ReadBytes(36));
             }
+
+            // Craftables
+            craftables = new Craftable(ms);
+
+            // Meals
+            meals = new Meal(ms);
+
+            // Combo List
+            comboList = new ComboList(ms);
         }
     }
 }

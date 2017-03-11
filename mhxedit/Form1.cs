@@ -44,7 +44,7 @@ namespace mhxedit
 
             textBoxName.Text = selSlot.name;
             textBoxPlayTime.Text = selSlot.playTime.ToString();
-            textBoxZenny.Text = selSlot.zenny.ToString();
+            textBoxZenny.Text = selSlot.Funds.ToString();
             textBoxRank.Text = selSlot.hr.ToString();
 
             textBoxRankPoints.Text = selSlot.hrPoints.ToString();
@@ -53,6 +53,18 @@ namespace mhxedit
             textBoxKokotoPoints.Text = selSlot.kokotoPoints.ToString();
             textBoxPokkePoints.Text = selSlot.pokkePoints.ToString();
             textBoxYukumoPoints.Text = selSlot.yukumoPoints.ToString();
+
+            labelCharacterWeapon.Text = selSlot.equippedWeapon.ID;
+            pictureBoxCharacterWeapon.Image = selSlot.equippedWeapon.GetIcon();
+
+            checkBoxItemBoxP11.Checked = selSlot.ItemBoxP11Unlocked;
+            checkBoxItemBoxP12.Checked = selSlot.ItemBoxP12Unlocked;
+            checkBoxPalicoBoxP6.Checked = selSlot.PalicoBoxP6Unlocked;
+            checkBoxPalicoBoxP7.Checked = selSlot.PalicoBoxP7Unlocked;
+
+            textBoxCraftableArmors.Text = selSlot.Craftables.UnlockedArmorCount.ToString();
+            textBoxMeals.Text = selSlot.Meals.CountUnlocked.ToString();
+            textBoxComboList.Text = selSlot.Combolist.CountUnlocked.ToString();
 
             monHunItemBindingSource.Clear();
             foreach (var item in selSlot.itemBox)
@@ -393,7 +405,7 @@ namespace mhxedit
             uint val = 0;
             if(uint.TryParse(textBoxZenny.Text, out val))
             {
-                selSlot.zenny = val;
+                selSlot.Funds = val;
             }
         }
 
@@ -458,6 +470,49 @@ namespace mhxedit
             {
                 selSlot.yukumoPoints = val;
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxItemBoxP11_CheckedChanged(object sender, EventArgs e)
+        {
+            selSlot.ItemBoxP11Unlocked = checkBoxItemBoxP11.Checked;
+        }
+
+        private void checkBoxItemBoxP12_CheckedChanged(object sender, EventArgs e)
+        {
+            selSlot.ItemBoxP12Unlocked = checkBoxItemBoxP12.Checked;
+        }
+
+        private void checkBoxPalicoBoxP6_CheckedChanged(object sender, EventArgs e)
+        {
+            selSlot.PalicoBoxP6Unlocked = checkBoxPalicoBoxP6.Checked;
+        }
+
+        private void checkBoxPalicoBoxP7_CheckedChanged(object sender, EventArgs e)
+        {
+            selSlot.PalicoBoxP7Unlocked = checkBoxPalicoBoxP7.Checked;
+        }
+
+        private void buttonUnlockAllCraftableArmors_Click(object sender, EventArgs e)
+        {
+            selSlot.Craftables.UnlockAll();
+            textBoxCraftableArmors.Text = selSlot.Craftables.UnlockedArmorCount.ToString();
+        }
+
+        private void buttonUnlockAllMeals_Click(object sender, EventArgs e)
+        {
+            selSlot.Meals.UnlockAll();
+            textBoxMeals.Text = selSlot.Meals.CountUnlocked.ToString();
+        }
+
+        private void buttonComboList_Click(object sender, EventArgs e)
+        {
+            selSlot.Combolist.UnlockAll();
+            textBoxComboList.Text = selSlot.Combolist.CountUnlocked.ToString();
         }
     }
 

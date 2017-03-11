@@ -289,6 +289,60 @@ namespace mhxedit
 
 
 
+        public virtual System.Drawing.Bitmap GetIcon()
+        {
+            switch (_type)
+            {
+                case 0:
+                    return null;
+                case 1:
+                    return null; //dictIdsHead.Values.ToArray();
+                case 2:
+                    return null; //dictIdsBody.Values.ToArray();
+                case 3:
+                    return null; //dictIdsArms.Values.ToArray();
+                case 4:
+                    return null; //dictIdsWaist.Values.ToArray();
+                case 5:
+                    return null; // dictIdsLegs.Values.ToArray();
+                case 6:
+                    return null; // dictIdsTalisman.Values.ToArray();
+                case 7:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Greatsword"));
+                case 8:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_SwordAndShield"));
+                case 9:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Hammer"));
+                case 10:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Lance"));
+                case 11:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_HeavyBowgun"));
+                case 12:
+                    return null; // none
+                case 13:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_LightBowgun"));
+                case 14:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Longsword"));
+                case 15:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Gunlance"));
+                case 16:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Bow"));
+                case 17:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_Dualblades"));
+                case 18:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_HuntingHorn"));
+                case 19:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_InsectGlaive"));
+                case 20:
+                    return (System.Drawing.Bitmap)(Properties.Resources.ResourceManager.GetObject("Equip_ChargeBlade"));
+                default:
+                    break;
+            }
+
+            return null;
+        }
+
+
 
         public static string[] types = new string[]{
             "<null>",

@@ -44,6 +44,27 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonUnlockAllCraftableArmors = new System.Windows.Forms.Button();
+            this.textBoxCraftableArmors = new System.Windows.Forms.TextBox();
+            this.labelCraftableArmorsCaption = new System.Windows.Forms.Label();
+            this.labelCharacterWeapon = new System.Windows.Forms.Label();
+            this.pictureBoxCharacterWeapon = new System.Windows.Forms.PictureBox();
+            this.checkBoxPalicoBoxP7 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPalicoBoxP6 = new System.Windows.Forms.CheckBox();
+            this.checkBoxItemBoxP12 = new System.Windows.Forms.CheckBox();
+            this.checkBoxItemBoxP11 = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxBerunaPoints = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxYukumoPoints = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxPokkePoints = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxAcademyPoints = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxRankPoints = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxKokotoPoints = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxRank = new System.Windows.Forms.TextBox();
@@ -77,6 +98,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
             this.textBoxTalRes2 = new System.Windows.Forms.TextBox();
             this.textBoxTalRes1 = new System.Windows.Forms.TextBox();
             this.numSlots = new System.Windows.Forms.NumericUpDown();
@@ -95,6 +117,12 @@
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.monHunEquipDataGridView = new System.Windows.Forms.DataGridView();
             this.iDAvailableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonUnlockAllMeals = new System.Windows.Forms.Button();
+            this.textBoxMeals = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.buttonComboList = new System.Windows.Forms.Button();
+            this.textBoxComboList = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,22 +131,10 @@
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monHunEquipBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxKokotoPoints = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxRankPoints = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBoxAcademyPoints = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxPokkePoints = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBoxYukumoPoints = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBoxBerunaPoints = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterWeapon)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2Search.SuspendLayout();
@@ -162,14 +178,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -227,6 +243,21 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonComboList);
+            this.tabPage1.Controls.Add(this.textBoxComboList);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.buttonUnlockAllMeals);
+            this.tabPage1.Controls.Add(this.textBoxMeals);
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.buttonUnlockAllCraftableArmors);
+            this.tabPage1.Controls.Add(this.textBoxCraftableArmors);
+            this.tabPage1.Controls.Add(this.labelCraftableArmorsCaption);
+            this.tabPage1.Controls.Add(this.labelCharacterWeapon);
+            this.tabPage1.Controls.Add(this.pictureBoxCharacterWeapon);
+            this.tabPage1.Controls.Add(this.checkBoxPalicoBoxP7);
+            this.tabPage1.Controls.Add(this.checkBoxPalicoBoxP6);
+            this.tabPage1.Controls.Add(this.checkBoxItemBoxP12);
+            this.tabPage1.Controls.Add(this.checkBoxItemBoxP11);
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Controls.Add(this.textBoxBerunaPoints);
             this.tabPage1.Controls.Add(this.label22);
@@ -254,6 +285,206 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Character";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // buttonUnlockAllCraftableArmors
+            // 
+            this.buttonUnlockAllCraftableArmors.Location = new System.Drawing.Point(202, 240);
+            this.buttonUnlockAllCraftableArmors.Name = "buttonUnlockAllCraftableArmors";
+            this.buttonUnlockAllCraftableArmors.Size = new System.Drawing.Size(75, 23);
+            this.buttonUnlockAllCraftableArmors.TabIndex = 32;
+            this.buttonUnlockAllCraftableArmors.Text = "Unlock All";
+            this.buttonUnlockAllCraftableArmors.UseVisualStyleBackColor = true;
+            this.buttonUnlockAllCraftableArmors.Click += new System.EventHandler(this.buttonUnlockAllCraftableArmors_Click);
+            // 
+            // textBoxCraftableArmors
+            // 
+            this.textBoxCraftableArmors.Location = new System.Drawing.Point(95, 242);
+            this.textBoxCraftableArmors.Name = "textBoxCraftableArmors";
+            this.textBoxCraftableArmors.ReadOnly = true;
+            this.textBoxCraftableArmors.Size = new System.Drawing.Size(92, 20);
+            this.textBoxCraftableArmors.TabIndex = 31;
+            this.textBoxCraftableArmors.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelCraftableArmorsCaption
+            // 
+            this.labelCraftableArmorsCaption.AutoSize = true;
+            this.labelCraftableArmorsCaption.Location = new System.Drawing.Point(7, 245);
+            this.labelCraftableArmorsCaption.Name = "labelCraftableArmorsCaption";
+            this.labelCraftableArmorsCaption.Size = new System.Drawing.Size(84, 13);
+            this.labelCraftableArmorsCaption.TabIndex = 30;
+            this.labelCraftableArmorsCaption.Text = "Craftable Armors";
+            // 
+            // labelCharacterWeapon
+            // 
+            this.labelCharacterWeapon.AutoSize = true;
+            this.labelCharacterWeapon.Location = new System.Drawing.Point(267, 14);
+            this.labelCharacterWeapon.Name = "labelCharacterWeapon";
+            this.labelCharacterWeapon.Size = new System.Drawing.Size(99, 13);
+            this.labelCharacterWeapon.TabIndex = 29;
+            this.labelCharacterWeapon.Text = "(EquippedWeapon)";
+            this.labelCharacterWeapon.Visible = false;
+            // 
+            // pictureBoxCharacterWeapon
+            // 
+            this.pictureBoxCharacterWeapon.Location = new System.Drawing.Point(65, 3);
+            this.pictureBoxCharacterWeapon.Name = "pictureBoxCharacterWeapon";
+            this.pictureBoxCharacterWeapon.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxCharacterWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCharacterWeapon.TabIndex = 28;
+            this.pictureBoxCharacterWeapon.TabStop = false;
+            // 
+            // checkBoxPalicoBoxP7
+            // 
+            this.checkBoxPalicoBoxP7.AutoSize = true;
+            this.checkBoxPalicoBoxP7.Location = new System.Drawing.Point(226, 212);
+            this.checkBoxPalicoBoxP7.Name = "checkBoxPalicoBoxP7";
+            this.checkBoxPalicoBoxP7.Size = new System.Drawing.Size(160, 17);
+            this.checkBoxPalicoBoxP7.TabIndex = 27;
+            this.checkBoxPalicoBoxP7.Text = "Palico Box Page 7 unlocked";
+            this.checkBoxPalicoBoxP7.UseVisualStyleBackColor = true;
+            this.checkBoxPalicoBoxP7.CheckedChanged += new System.EventHandler(this.checkBoxPalicoBoxP7_CheckedChanged);
+            // 
+            // checkBoxPalicoBoxP6
+            // 
+            this.checkBoxPalicoBoxP6.AutoSize = true;
+            this.checkBoxPalicoBoxP6.Location = new System.Drawing.Point(226, 189);
+            this.checkBoxPalicoBoxP6.Name = "checkBoxPalicoBoxP6";
+            this.checkBoxPalicoBoxP6.Size = new System.Drawing.Size(160, 17);
+            this.checkBoxPalicoBoxP6.TabIndex = 26;
+            this.checkBoxPalicoBoxP6.Text = "Palico Box Page 6 unlocked";
+            this.checkBoxPalicoBoxP6.UseVisualStyleBackColor = true;
+            this.checkBoxPalicoBoxP6.CheckedChanged += new System.EventHandler(this.checkBoxPalicoBoxP6_CheckedChanged);
+            // 
+            // checkBoxItemBoxP12
+            // 
+            this.checkBoxItemBoxP12.AutoSize = true;
+            this.checkBoxItemBoxP12.Location = new System.Drawing.Point(10, 212);
+            this.checkBoxItemBoxP12.Name = "checkBoxItemBoxP12";
+            this.checkBoxItemBoxP12.Size = new System.Drawing.Size(157, 17);
+            this.checkBoxItemBoxP12.TabIndex = 25;
+            this.checkBoxItemBoxP12.Text = "Item Box Page 12 unlocked";
+            this.checkBoxItemBoxP12.UseVisualStyleBackColor = true;
+            this.checkBoxItemBoxP12.CheckedChanged += new System.EventHandler(this.checkBoxItemBoxP12_CheckedChanged);
+            // 
+            // checkBoxItemBoxP11
+            // 
+            this.checkBoxItemBoxP11.AutoSize = true;
+            this.checkBoxItemBoxP11.Location = new System.Drawing.Point(10, 189);
+            this.checkBoxItemBoxP11.Name = "checkBoxItemBoxP11";
+            this.checkBoxItemBoxP11.Size = new System.Drawing.Size(157, 17);
+            this.checkBoxItemBoxP11.TabIndex = 24;
+            this.checkBoxItemBoxP11.Text = "Item Box Page 11 unlocked";
+            this.checkBoxItemBoxP11.UseVisualStyleBackColor = true;
+            this.checkBoxItemBoxP11.CheckedChanged += new System.EventHandler(this.checkBoxItemBoxP11_CheckedChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(283, 74);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 13);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "Beruna Points";
+            // 
+            // textBoxBerunaPoints
+            // 
+            this.textBoxBerunaPoints.Location = new System.Drawing.Point(371, 71);
+            this.textBoxBerunaPoints.Name = "textBoxBerunaPoints";
+            this.textBoxBerunaPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxBerunaPoints.TabIndex = 20;
+            this.textBoxBerunaPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxBerunaPoints.TextChanged += new System.EventHandler(this.textBoxBerunaPoints_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(283, 152);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "Yukumo Points";
+            // 
+            // textBoxYukumoPoints
+            // 
+            this.textBoxYukumoPoints.Location = new System.Drawing.Point(371, 149);
+            this.textBoxYukumoPoints.Name = "textBoxYukumoPoints";
+            this.textBoxYukumoPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxYukumoPoints.TabIndex = 18;
+            this.textBoxYukumoPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxYukumoPoints.TextChanged += new System.EventHandler(this.textBoxYukumoPoints_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(283, 126);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(70, 13);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Pokke Points";
+            // 
+            // textBoxPokkePoints
+            // 
+            this.textBoxPokkePoints.Location = new System.Drawing.Point(371, 123);
+            this.textBoxPokkePoints.Name = "textBoxPokkePoints";
+            this.textBoxPokkePoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxPokkePoints.TabIndex = 14;
+            this.textBoxPokkePoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPokkePoints.TextChanged += new System.EventHandler(this.textBoxPokkePoints_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(283, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 13);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Academy Points";
+            // 
+            // textBoxAcademyPoints
+            // 
+            this.textBoxAcademyPoints.Location = new System.Drawing.Point(371, 45);
+            this.textBoxAcademyPoints.Name = "textBoxAcademyPoints";
+            this.textBoxAcademyPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxAcademyPoints.TabIndex = 12;
+            this.textBoxAcademyPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxAcademyPoints.TextChanged += new System.EventHandler(this.textBoxAcademyPoints_TextChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 141);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(55, 13);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "HR Points";
+            // 
+            // textBoxRankPoints
+            // 
+            this.textBoxRankPoints.Location = new System.Drawing.Point(95, 138);
+            this.textBoxRankPoints.Name = "textBoxRankPoints";
+            this.textBoxRankPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxRankPoints.TabIndex = 10;
+            this.textBoxRankPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxRankPoints.TextChanged += new System.EventHandler(this.textBoxRankPoints_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(283, 100);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(73, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Kokoto Points";
+            // 
+            // textBoxKokotoPoints
+            // 
+            this.textBoxKokotoPoints.Location = new System.Drawing.Point(371, 97);
+            this.textBoxKokotoPoints.Name = "textBoxKokotoPoints";
+            this.textBoxKokotoPoints.Size = new System.Drawing.Size(92, 20);
+            this.textBoxKokotoPoints.TabIndex = 8;
+            this.textBoxKokotoPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxKokotoPoints.TextChanged += new System.EventHandler(this.textBoxKokotoPoints_TextChanged);
             // 
             // label4
             // 
@@ -674,6 +905,15 @@
             this.tabPage3.Text = "Equipment Box";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(526, 55);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "by Value or Name!";
+            // 
             // textBoxTalRes2
             // 
             this.textBoxTalRes2.Location = new System.Drawing.Point(402, 245);
@@ -871,6 +1111,62 @@
             this.iDAvailableBindingSource.DataMember = "IDAvailable";
             this.iDAvailableBindingSource.DataSource = this.monHunEquipBindingSource;
             // 
+            // buttonUnlockAllMeals
+            // 
+            this.buttonUnlockAllMeals.Location = new System.Drawing.Point(202, 269);
+            this.buttonUnlockAllMeals.Name = "buttonUnlockAllMeals";
+            this.buttonUnlockAllMeals.Size = new System.Drawing.Size(75, 23);
+            this.buttonUnlockAllMeals.TabIndex = 35;
+            this.buttonUnlockAllMeals.Text = "Unlock All";
+            this.buttonUnlockAllMeals.UseVisualStyleBackColor = true;
+            this.buttonUnlockAllMeals.Click += new System.EventHandler(this.buttonUnlockAllMeals_Click);
+            // 
+            // textBoxMeals
+            // 
+            this.textBoxMeals.Location = new System.Drawing.Point(95, 271);
+            this.textBoxMeals.Name = "textBoxMeals";
+            this.textBoxMeals.ReadOnly = true;
+            this.textBoxMeals.Size = new System.Drawing.Size(92, 20);
+            this.textBoxMeals.TabIndex = 34;
+            this.textBoxMeals.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(7, 274);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(35, 13);
+            this.label24.TabIndex = 33;
+            this.label24.Text = "Meals";
+            // 
+            // buttonComboList
+            // 
+            this.buttonComboList.Location = new System.Drawing.Point(202, 298);
+            this.buttonComboList.Name = "buttonComboList";
+            this.buttonComboList.Size = new System.Drawing.Size(75, 23);
+            this.buttonComboList.TabIndex = 38;
+            this.buttonComboList.Text = "Unlock All";
+            this.buttonComboList.UseVisualStyleBackColor = true;
+            this.buttonComboList.Click += new System.EventHandler(this.buttonComboList_Click);
+            // 
+            // textBoxComboList
+            // 
+            this.textBoxComboList.Location = new System.Drawing.Point(95, 300);
+            this.textBoxComboList.Name = "textBoxComboList";
+            this.textBoxComboList.ReadOnly = true;
+            this.textBoxComboList.Size = new System.Drawing.Size(92, 20);
+            this.textBoxComboList.TabIndex = 37;
+            this.textBoxComboList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(7, 303);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(59, 13);
+            this.label25.TabIndex = 36;
+            this.label25.Text = "Combo List";
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -926,123 +1222,6 @@
             // 
             this.monHunEquipBindingSource.DataSource = typeof(mhxedit.MonHunEquip);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(283, 100);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 13);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Kokoto Points";
-            // 
-            // textBoxKokotoPoints
-            // 
-            this.textBoxKokotoPoints.Location = new System.Drawing.Point(371, 97);
-            this.textBoxKokotoPoints.Name = "textBoxKokotoPoints";
-            this.textBoxKokotoPoints.Size = new System.Drawing.Size(92, 20);
-            this.textBoxKokotoPoints.TabIndex = 8;
-            this.textBoxKokotoPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxKokotoPoints.TextChanged += new System.EventHandler(this.textBoxKokotoPoints_TextChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 141);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(55, 13);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "HR Points";
-            // 
-            // textBoxRankPoints
-            // 
-            this.textBoxRankPoints.Location = new System.Drawing.Point(95, 138);
-            this.textBoxRankPoints.Name = "textBoxRankPoints";
-            this.textBoxRankPoints.Size = new System.Drawing.Size(92, 20);
-            this.textBoxRankPoints.TabIndex = 10;
-            this.textBoxRankPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxRankPoints.TextChanged += new System.EventHandler(this.textBoxRankPoints_TextChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(283, 48);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 13);
-            this.label19.TabIndex = 13;
-            this.label19.Text = "Academy Points";
-            // 
-            // textBoxAcademyPoints
-            // 
-            this.textBoxAcademyPoints.Location = new System.Drawing.Point(371, 45);
-            this.textBoxAcademyPoints.Name = "textBoxAcademyPoints";
-            this.textBoxAcademyPoints.Size = new System.Drawing.Size(92, 20);
-            this.textBoxAcademyPoints.TabIndex = 12;
-            this.textBoxAcademyPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxAcademyPoints.TextChanged += new System.EventHandler(this.textBoxAcademyPoints_TextChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(283, 126);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 13);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "Pokke Points";
-            // 
-            // textBoxPokkePoints
-            // 
-            this.textBoxPokkePoints.Location = new System.Drawing.Point(371, 123);
-            this.textBoxPokkePoints.Name = "textBoxPokkePoints";
-            this.textBoxPokkePoints.Size = new System.Drawing.Size(92, 20);
-            this.textBoxPokkePoints.TabIndex = 14;
-            this.textBoxPokkePoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxPokkePoints.TextChanged += new System.EventHandler(this.textBoxPokkePoints_TextChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(283, 152);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 13);
-            this.label22.TabIndex = 19;
-            this.label22.Text = "Yukumo Points";
-            // 
-            // textBoxYukumoPoints
-            // 
-            this.textBoxYukumoPoints.Location = new System.Drawing.Point(371, 149);
-            this.textBoxYukumoPoints.Name = "textBoxYukumoPoints";
-            this.textBoxYukumoPoints.Size = new System.Drawing.Size(92, 20);
-            this.textBoxYukumoPoints.TabIndex = 18;
-            this.textBoxYukumoPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxYukumoPoints.TextChanged += new System.EventHandler(this.textBoxYukumoPoints_TextChanged);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(283, 74);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 13);
-            this.label23.TabIndex = 21;
-            this.label23.Text = "Beruna Points";
-            // 
-            // textBoxBerunaPoints
-            // 
-            this.textBoxBerunaPoints.Location = new System.Drawing.Point(371, 71);
-            this.textBoxBerunaPoints.Name = "textBoxBerunaPoints";
-            this.textBoxBerunaPoints.Size = new System.Drawing.Size(92, 20);
-            this.textBoxBerunaPoints.TabIndex = 20;
-            this.textBoxBerunaPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxBerunaPoints.TextChanged += new System.EventHandler(this.textBoxBerunaPoints_TextChanged);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(526, 55);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(94, 13);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "by Value or Name!";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1060,6 +1239,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterWeapon)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage2Search.ResumeLayout(false);
@@ -1170,6 +1350,21 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxRankPoints;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.CheckBox checkBoxPalicoBoxP7;
+        private System.Windows.Forms.CheckBox checkBoxPalicoBoxP6;
+        private System.Windows.Forms.CheckBox checkBoxItemBoxP12;
+        private System.Windows.Forms.CheckBox checkBoxItemBoxP11;
+        private System.Windows.Forms.Label labelCharacterWeapon;
+        private System.Windows.Forms.PictureBox pictureBoxCharacterWeapon;
+        private System.Windows.Forms.Button buttonUnlockAllCraftableArmors;
+        private System.Windows.Forms.TextBox textBoxCraftableArmors;
+        private System.Windows.Forms.Label labelCraftableArmorsCaption;
+        private System.Windows.Forms.Button buttonUnlockAllMeals;
+        private System.Windows.Forms.TextBox textBoxMeals;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button buttonComboList;
+        private System.Windows.Forms.TextBox textBoxComboList;
+        private System.Windows.Forms.Label label25;
     }
 }
 

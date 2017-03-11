@@ -118,6 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Equip_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_ChargeBlade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_ChargeBlade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Dualblades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Dualblades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Greatsword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Greatsword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Gunlance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Gunlance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Hammer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Hammer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_HeavyBowgun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_HeavyBowgun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_HuntingHorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_HuntingHorn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_InsectGlaive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_InsectGlaive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Lance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Lance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_LightBowgun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_LightBowgun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Longsword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Longsword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_Switchaxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_Switchaxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Equip_SwordAndShield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icon\Equip_SwordAndShield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\license.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

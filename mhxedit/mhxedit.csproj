@@ -53,12 +53,15 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboList.cs" />
+    <Compile Include="Craftable.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meals.cs" />
     <Compile Include="MonHunCharacter.cs" />
     <Compile Include="MonHunEquip.cs" />
     <Compile Include="MonHunItem.cs" />
@@ -98,11 +101,24 @@
     <Content Include="app.ico" />
     <Content Include="icon\app.ico" />
     <Content Include="icon\app.png" />
+    <None Include="Resources\Image1.png" />
+    <None Include="icon\Equip_Longsword.png" />
+    <None Include="icon\Equip_Greatsword.png" />
+    <None Include="icon\Equip_SwordAndShield.png" />
+    <None Include="icon\Equip_Bow.png" />
+    <None Include="icon\Equip_ChargeBlade.png" />
+    <None Include="icon\Equip_Dualblades.png" />
+    <None Include="icon\Equip_Gunlance.png" />
+    <None Include="icon\Equip_Hammer.png" />
+    <None Include="icon\Equip_HeavyBowgun.png" />
+    <None Include="icon\Equip_HuntingHorn.png" />
+    <None Include="icon\Equip_InsectGlaive.png" />
+    <None Include="icon\Equip_Lance.png" />
+    <None Include="icon\Equip_LightBowgun.png" />
+    <None Include="icon\Equip_Switchaxe.png" />
     <Content Include="license.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
